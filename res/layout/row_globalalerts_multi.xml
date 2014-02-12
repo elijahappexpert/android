@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ********************** BEGIN LEGAL STUFF ****************************
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    ********************** END LEGAL STUFF ******************************
+-->
+
+<!-- ********************** BEGIN DEVELOPER NOTES ****************************
+	This is our ROW layout file for the ListView contained in the 
+	GlobalAlertsActivity Class. It contains a number of elements that are NOT
+	displayed on the screen intertwined w/those which are visible to the user.
+	A Relative Layout is incorporated inside of a Linear Layout to assist in 
+	the right justification of the context. NOTE: It's a work in progress that
+	is intentionally left in flux .... sorry for the mess. :-)
+	********************** END DEVELOPER NOTES ******************************
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="match_parent"
+	android:weightSum="1" 
+	android:layout_height="wrap_content"
+	android:paddingLeft="5dp" 
+	android:paddingBottom="5dp"
+	android:paddingTop="5dp">
+
+	<!-- ************** [BEGIN] elements ABOVE core row of ListViewRow ******************-->
+
+	<LinearLayout android:id="@+id/linearLayout1"
+		android:layout_width="match_parent" 
+		android:layout_height="wrap_content"
+		android:weightSum="1">
+
+		<TextView android:id="@+id/textViewTitleGlobalAlerts"
+			android:text="GlobalAlerts  ID:" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:paddingRight="10dp"
+			android:textSize="10dp"
+			android:visibility="gone"></TextView>
+
+		<TextView android:id="@+id/textViewGaID"
+			android:text="ID" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:paddingLeft="5dp" 
+			android:textSize="10dp"
+			android:visibility="gone"></TextView>
+
+		<TextView android:id="@+id/textViewGaDate"
+			android:text="Date" 
+			android:layout_width="wrap_content" 
+			android:layout_height="match_parent" 
+			android:textStyle="bold|italic"
+			android:layout_gravity="top|left"
+			android:textColor="@color/black" 
+			android:textSize="12dp"></TextView>
+	</LinearLayout>
+	<!-- ************** [END] elements ABOVE core row of ListViewRow ******************-->
+
+	<!-- ************** [BEGIN] CORE row of ListViewRow *********************************-->
+	<!-- Using Relative layout because 
+		 LinearLayout won't permit Right 
+		 Justification 
+	-->
+
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/RelativeLayout01" 
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:padding="5dp">
+		
+		<ImageView android:src="@drawable/row_icon_globalalerts" 
+			android:id="@+id/imageViewRowIconGlobalAlerts"
+			android:layout_height="wrap_content" 
+			android:layout_width="wrap_content"
+			android:layout_gravity="top|left|center_vertical"
+			android:layout_alignParentLeft="true" 
+			android:visibility="visible" android:paddingRight="15dp"></ImageView>
+		
+		<TextView android:id="@+id/textViewGaDetails"
+			android:text="Details" 
+			android:layout_height="wrap_content" 
+			android:layout_width="wrap_content"
+			android:textColor="@color/burgundy"
+			android:textStyle="bold" 
+			android:textSize="14dp" 
+			android:layout_gravity="center_vertical"
+			android:layout_alignParentRight="true" 
+			android:layout_toRightOf="@+id/imageViewRowIconGlobalAlerts"
+			android:gravity="left|center_vertical"></TextView>
+			
+				
+	</RelativeLayout>	
+	<!-- ************** [END] CORE row of ListViewRow ****************************-->
+	
+	<!-- ************** [BEGIN] Invisible elements of ListViewRow ******************-->
+
+	<TextView android:id="@+id/textViewGaLink"
+		android:text="Link" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:textSize="9dp" 
+		android:visibility="gone"></TextView>
+
+	<!-- ************** [END] Invisible elements of ListViewRow ****************************-->
+	
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+

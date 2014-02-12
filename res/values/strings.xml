@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ********************** BEGIN LEGAL STUFF ****************************
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    ********************** END LEGAL STUFF ******************************
+-->
+
+<!-- ********************** BEGIN DEVELOPER NOTES ****************************
+	This is the strings file for the entire application. Every important variable 
+	referenced in XML that calls a string does so from this file as well as a 
+	host of others which are key to the operation of the App.
+	********************** END DEVELOPER NOTES ******************************
+-->
+
+
+<resources>
+
+    <!--  Application Title Strings -->
+    
+    <string name="hello">DisasterEventsActivity</string>
+    <string name="app_name">DisasterEvents</string>
+    <string name="titleEarthquakes">Earthquakes</string>
+    <string name="titleDisasterEvents">Disaster Events</string>
+    <string name="titleManMade">Man Made</string>
+    <string name="titleCATStory">Catastrophe Map Story</string>
+    <string name="titleHSIncident">Homeland Security</string>
+    <string name="titleFAAIncident">FAA AirPlane Incidents</string>
+    <string name="titleEBHIncident">Epidemic / Bio Hazards </string>
+    <string name="titleTopStories">Top Stories </string>
+    <string name="titleGlobalAlerts">Global Disaster Alerts </string>
+    <string name="titleVolcanos">Global Volcanos</string>
+    <string name="titleAirCraftIncidents">AirCraft Incidents</string>
+    <string name="titlePullutionAlerts">Pollution Alerts</string>
+    
+    <!-- ** AboutActivity Strings ** -->
+    <string name="titleAboutDisasterEvents">About Disaster Events</string>
+    <string name="titleAboutEarthquakes">About Earthquakes</string>
+    <string name="titleAboutVolcanos">About Volcanos</string>
+    <string name="titleAboutTopStories">About Top Stories</string>
+    <string name="titleAboutGlobalAlerts">About Global Alerts</string>
+    <string name="titleAboutPollutionAlerts">About Pollution Alerts</string>
+    <string name="titleAboutBioHazards">About Pollution Alerts</string>
+    <string name="titleAboutAirCraftIncidents">About Aircraft Incidents</string>
+    <string name="titleAboutHomelandSecurityIncidents">About Homeland Security Incidents</string>
+    <string name="titleAboutCATStories">About Toxic Apocalypse</string>
+    
+    <!-- MAPS  -->
+    <string name="titleDisasterMap">Disaster Map</string>
+    
+  
+    <!-- XML Data Feed URL Strings -->
+    
+      <string name="quake_feed">http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_hour.quakeml</string>
+      <string name="volcano_feed">http://www.volcano.si.edu/news/WeeklyVolcanoRSS.xml</string>
+      <string name="hsincident_feed">http://www.nationalterroralert.com/category/incident_reports/feed/rss/</string>
+      <string name="faaincident_feed">http://feeds.feedburner.com/rsoeEdis-FaaAirplaneAccidentAndIncidentInformation?format=xml</string>
+      <string name="ebhincident_feed">http://feeds.feedburner.com/RsoeEdis-Ebhwm?format=xml</string>
+      <string name="topstory_feed">http://feeds.feedburner.com/RsoeEdis-EmergencyAndDisasterInformation?format=xml</string>
+      <string name="globalalerts_feed">http://www.gdacs.org/XML/RSS.xml</string>
+      <string name="airplane_feed">http://www.aviationinspector.com/?feed=rss2</string>
+	  <string name="pollution_feed">http://alerts.skytruth.org/rss?tags=SkyTruth,NRC,NOAA</string>
+<!--   OLD: <string name="pollution_feed">http://alerts.skytruth.org/rss</string> -->
+      <string name="toxic_apocalypse_feed">http://catastrophemap.com/blog/?feed=rss2&amp;cat=465</string>
+      <string name="catmap_feed">http://catastrophemap.com/blog/?feed=rss2</string>
+
+    <!-- Application UI Strings --> 
+    <string name="progressDialogue">Please wait, downloading ...</string>
+	<string name="progressDialogueSummary">Downloading Online Data</string>
+	
+	
+	<!--  *******************************[BEGIN] DASHBOARD STRINGS ***************** -->
+	
+    <string name="description_logo">Demo</string>
+
+	<!-- Description Strings: Dashbaord TitleBar Widgets -->
+	
+    <string name="description_about">About</string>
+    <string name="description_home">Home</string>
+    <string name="description_search">Search</string>
+    
+    <!-- Description Strings: Title (and backto) Elements -->
+    <string name="description_get_earthquakes">Get Earthquakes</string>
+    <string name="description_backto_quakes">Back to Earthquakes</string>
+    <string name="description_get_catstories">Get CATStories</string>
+    <string name="description_backto_catstories">Back to CATStories</string>
+    <string name="description_get_topstories">Get Top Stories</string>
+    <string name="description_backto_topstories">Back to Top Stories</string>
+    <string name="description_get_globalalerts">Get Global Alerts</string>
+    <string name="description_backto_globalalerts">Back to Global Alerts</string>
+    <string name="description_get_pollution">Get Pollution Alerts</string>
+    <string name="description_backto_pollution">Back to Pollution Alerts</string>
+    <string name="description_get_biohazards">Get Bio-Hazards </string>
+    <string name="description_backto_biohazards">Back to Bio-Hazards</string>
+    <string name="description_get_aircraft">Get Aircraft Incidents </string>
+    <string name="description_backto_aircraft">Back to Aircraft Incidents</string>  
+    <string name="description_get_volcanos">Get Volcanos </string>
+    <string name="description_backto_volcanos">Back to Volcanos</string> 
+    <string name="description_get_security">Get Homeland Security Incidents </string>
+    <string name="description_backto_security">Back to Homeland Security Incidents</string>     
+    
+     <!-- Description Strings: Dashboard Elements -->
+     
+    <string name="description_earthquakes">Earthquakes</string>
+    <string name="description_volcanos">Volcanos</string>
+    <string name="description_aircraft">Aircraft Incidents</string>
+    <string name="description_global_alerts">Global Alerts</string>
+    <string name="description_top_stories">Top Stories</string>
+    <string name="description_biohazards">Bio-Hazards</string>
+    <string name="description_pollution">Pollution Alerts</string>
+    <string name="description_security">Homeland Security</string>
+    
+  	<!-- TITLE Strings: Used for the text widgets in the Dashboard Title Bar -->
+ 
+    <string name="title_about">About</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_earthquakes">Earthquakes</string>
+    <string name="title_volcanos">Volcanos</string>
+    <string name="title_aircraft">Aircraft Incidents</string>
+    <string name="title_global_alerts">Global Alerts</string>
+    <string name="title_top_stories">Top Stories</string>
+    <string name="title_biohazards">Bio-Hazards</string>
+    <string name="title_pollution">Pollution Alerts</string>
+    <string name="title_security">Homeland Security</string>
+    <string name="title_catmap">Toxic Apocalypse</string>
+
+ 	<!-- INFO Strings: Used when someone presses the "I" on the Dashboard Title Bar -->
+ 	
+	<string name="info_disasterevents">Disaster Events Information</string>
+    <string name="info_earthquakes">Earthquakes Information</string>
+    <string name="info_volcanos">Volcanos Information</string>
+    <string name="info_aircrafts">Aircraft Incidents Information</string>
+    <string name="info_globalalerts">Global Alerts Information</string>
+    <string name="info_topstories">Top Stories Information</string>
+    <string name="info_biohazards">Bio-Hazards Information</string>
+    <string name="info_pullution">Pollution Alerts Information</string>
+    <string name="info_security">Homeland Security Information</string>
+
+	<!--  *******************************[END] DASHBOARD STRINGS ******************* -->
+	
+</resources>

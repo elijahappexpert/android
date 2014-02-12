@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ********************** BEGIN LEGAL STUFF ****************************
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    ********************** END LEGAL STUFF ******************************
+-->	
+
+<!-- ********************** BEGIN DEVELOPER NOTES ****************************
+	This is the layout file that gets inflated when a user presses the MAP 
+	button on the QuickAction Menu that pops up after they press on a ROW
+	item in the ListView of the Activity. The KEY element here is the MAPVIEW,
+	which is what gets populated by the details of the XML feed element in 
+	question should it have a GEORSS point in it's XML feed.
+	********************** END DEVELOPER NOTES ******************************
+-->
+
+<!-- This file is /res/layout/disaster_map.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+<!-- Google Maps API KEY, to make the map move SIDEWAYS use [android:clickable="true"]   -->
+
+    <com.google.android.maps.MapView
+        android:id="@+id/geoDisasterMap" 
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:apiKey="0QlHA-Eql3tPcnU5RYrBeYbHC3AHcdsmYYJIvpw"
+        />
+
+</RelativeLayout>

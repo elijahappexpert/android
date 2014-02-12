@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ********************** BEGIN LEGAL STUFF ****************************
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    ********************** END LEGAL STUFF ******************************
+-->
+
+<!-- ********************** BEGIN DEVELOPER NOTES ****************************
+	This is our primary layout file for the DisasterEvents Activity Class.
+	
+	It contains two key segments of code (1) the DASHBOARD TITLE BAR layout, 
+	and (2)	the layout of the actual DASHBOARD elements itself (Activity Content).
+	
+	DASHBOARD:
+	The Dashboard used SELECTOR XML statements to either change the background 
+	color [android:background] or (potentially) to change an image depending 
+	on the state of pressed, selected, or default [android:src]. Those XML 
+	files are housed in /res/drawables.	The images used are housed in 
+	/res/drawable-hdpi. The [android:onClick] determines the functionality 
+	of a clickable item, which can be found in the file BaseActivity.class.
+	Android ID's are required for the INFO and SEARCH buttons because the 
+	onClick Mechanism in the File BaseActivity.class [onClickAbout, onClickSearch]
+	both cater to multiple activities using the info and search capabilities, 
+	whereas	onClickHome, and onClickRefreshQuakes always perform only one function.
+	
+	ACTIVITY CONTENT:
+	The content of this dashboard is laid out into 4 rows of 2 items each. 
+	The ID's of each element is important since the onClickFeature FN in the BaseActivity 
+	class uses these to invoke the proper activity for each. The tags that corresponds to 
+	android:drawableTop="@drawable/home_button_XXXX contains the various selector statements 
+	used to implement the image rollovers used. 
+	
+	 
+	********************** END DEVELOPER NOTES ******************************
+-->
+
+<!-- ************** [BEGIN] Overall ScrollView Layout   ****************************-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:layout_width="fill_parent" 	android:layout_height="fill_parent">
+
+
+<LinearLayout 
+    android:id="@+id/db1_root"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    
+<!-- ************** [BEGIN] CORE Elements of the DASHBOARD TITLE BAR   ****************-->
+
+	<LinearLayout style="@style/TitleBar">
+	
+        <ImageView style="@style/TitleBarLogo"
+            android:contentDescription="@string/description_logo"
+            android:src="@drawable/title_logo" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        
+        <TextView style="@style/TitleBarText" />
+        
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_about"
+            android:src="@drawable/title_about"
+            android:onClick="onClickAbout" 
+            android:background="@drawable/title_change_bkgrnd_color"
+            android:id="@+id/info_btn_disasterevents"/>              
+            
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_search"
+            android:src="@drawable/title_search"
+            android:onClick="onClickSearch" 
+            android:background="@drawable/title_change_bkgrnd_color" 
+            android:id="@+id/search_btn_disasterevents" />
+                        
+	</LinearLayout>
+
+<!-- ************** [END] CORE Elements of the DASHBOARD   ****************************-->
+
+
+<!-- ************** [BEGIN] CORE Elements of DisasterEvents Activity Screen  **********-->
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1" android:padding="10dip">
+   
+ 
+<!-- **** ROW 0 **** -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:paddingTop="15dp">
+        
+        <!-- ******* [CATMAP] *********-->
+        <Button android:id="@+id/home_btn_catmap"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_catmap"
+            android:drawableTop="@drawable/home_button_catmap"/>
+        
+    </LinearLayout>
+    
+        
+    
+<!-- **** ROW 1 **** -->
+
+    <TextView
+        android:id="@+id/textViewFeaturedFeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:text="(Featured Data Provider)"
+        android:textSize="7dp" android:textColor="@color/burgundy"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:paddingTop="5dp">
+        
+        <!-- ******* [TOPSTORIES] *********-->
+        <Button android:id="@+id/home_btn_topstories"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_top_stories"
+            android:drawableTop="@drawable/home_button_topstories"/>
+            
+        <!-- ******* [GLOBAL ALERTS] *********-->
+    
+        <Button android:id="@+id/home_btn_globalalerts"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_global_alerts"
+            android:drawableTop="@drawable/home_button_globalalerts"/>
+    </LinearLayout>
+
+
+<!-- **** ROW 2 **** -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:paddingTop="5dp">
+        
+        <!-- ******* [EARTHQUAKES] *********-->
+        <Button android:id="@+id/home_btn_earthquakes"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_earthquakes"
+            android:drawableTop="@drawable/home_button_earthquakes"/>
+                    
+        <!-- ******* [VOLCANOS] *********-->    
+        <Button android:id="@+id/home_btn_volcanos"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_volcanos"
+            android:drawableTop="@drawable/home_button_volcanos"/>
+    </LinearLayout>
+
+
+<!-- **** ROW 3 **** -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:paddingTop="5dp">
+    
+        <!-- ******* [POLLUTION] *********-->
+        <Button android:id="@+id/home_btn_pollution"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_pollution"
+            android:drawableTop="@drawable/home_button_pollution"/>
+            
+        <!-- ******* [BIO_HAZARDS] *********-->    
+        <Button android:id="@+id/home_btn_biohazards"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_biohazards"
+            android:drawableTop="@drawable/home_button_biohazards"/>
+    </LinearLayout>
+
+
+<!-- **** ROW 4 **** -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" android:paddingTop="5dp">
+        
+            <!-- ******* [AIRCRAFT] *********-->
+        <Button android:id="@+id/home_btn_aircraft"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_aircraft"
+            android:drawableTop="@drawable/home_button_aircraft"/>
+ 
+        <!-- ******* [HOMELAND SECURITY] *********-->    
+        <Button android:id="@+id/home_btn_security"
+            style="@style/HomeButton"
+            android:onClick="onClickFeature"
+            android:text="@string/title_security"
+            android:drawableTop="@drawable/home_button_security"/>
+    </LinearLayout>
+    
+    
+</LinearLayout>
+
+<!-- ************** [END] CORE Elements of DisasterEvents Activity Screen  **********-->
+</LinearLayout>
+
+
+<!-- ************** [END] Overall ScrollView Layout   ****************************-->
+</ScrollView>
+
+
+
